@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Angaj Kumar | Data Science Portfolio</title>
+  <style>
+    body {
+      background: #23243a;
+      color: #fff;
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 6vw 1rem 6vw;
+    }
+    .logo {
+      font-size: 1.6rem;
+      font-weight: bold;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: #00f6d1;
+    }
+    .section {
+      padding: 5vw 6vw;
+      max-width: 1110px;
+      margin: 0 auto;
+    }
+    .header-flex {
+      display: flex;
+      align-items: center;
+      gap: 2.2em;
+      flex-wrap: wrap;
+    }
+    .profile-photo {
+      background: #00f6d1;
+      border-radius: 20px;
+      width: 240px;
+      height: 240px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 5px 24px #00f6d199;
+      flex-shrink: 0;
+    }
+    .profile-photo img {
+      width: 195px;
+      height: 195px;
+      border-radius: 18px;
+      object-fit: cover;
+    }
+    .intro-main h1 {
+      font-size: 2.4em;
+      font-weight: bold;
+      margin-bottom: 0.5em;
+    }
+    .animated-text {
+      font-size: 1.45em;
+      font-weight: 600;
+      background: #00f6d1;
+      color: #23243a;
+      border-radius: 6px;
+      padding: 2px 10px;
+      display: inline-block;
+      margin-bottom: 1em;
+      overflow: hidden;
+      border-right: 0.18em solid #23243a;
+      white-space: nowrap;
+    }
+    .intro-main p {
+      margin: 1em 0 2em 0;
+      opacity: 0.9;
+      font-size: 1.08em;
+      max-width: 460px;
+      line-height: 1.4;
+    }
+    .social {
+      display: flex;
+      gap: 1.3rem;
+      margin-bottom: 2em;
+    }
+    .social a {
+      width: 48px;
+      height: 48px;
+      background: #191e26;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #00f6d1;
+      font-size: 1.55rem;
+      text-decoration: none;
+      box-shadow: 0 2px 12px #00f6d199;
+      transition: background 0.3s, color 0.3s, transform 0.3s;
+    }
+    .social a:hover {
+      background: #00f6d1;
+      color: #23243a;
+      transform: scale(1.15) rotate(-7deg);
+      box-shadow: 0 4px 20px #00f6d1aa;
+    }
+    /* About Section */
+    #about h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1em;
+    }
+    .about-text {
+      max-width: 800px;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+    .about-text ul {
+      list-style-type: disc;
+      padding-left: 1.2rem;
+      margin-top: 1em;
+    }
+    .about-text ul li {
+      margin-bottom: 0.6em;
+    }
+    /* Services Section */
+    #services h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1.6em;
+      color: #00f6d1;
+    }
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .service-card {
+      background: #1f2132;
+      border-radius: 14px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 6px 16px #00f6d120;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 26px #00f6d1aa;
+    }
+    .service-icon {
+      font-size: 2.8rem;
+      color: #00f6d1;
+      margin-bottom: 1rem;
+    }
+    .service-card h3 {
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .service-card p {
+      opacity: 0.8;
+      font-size: 1rem;
+      line-height: 1.45;
+    }
+    .service-btn {
+      background: #00f6d1;
+      color: #23243a;
+      border-radius: 24px;
+      padding: 0.6em 2em;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 1.5em;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .service-btn:hover {
+      background-color: #fff;
+      color: #00f6d1;
+    }
+    /* Contact Section */
+    #contact h2 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1em;
+      color: #00f6d1;
+    }
+    .contact-container {
+      background: #1f2132;
+      border-radius: 16px;
+      padding: 3rem 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 8px 24px #00f6d140;
+    }
+    .contact-container p {
+      margin-bottom: 1.5em;
+      opacity: 0.85;
+      font-size: 1rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.9em 1em;
+      margin-bottom: 1.3em;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+      font-family: inherit;
+      background: #292c37;
+      color: #fff;
+      resize: none;
+    }
+    .contact-form button {
+      background: #00f6d1;
+      color: #23243a;
+      border: none;
+      border-radius: 28px;
+      padding: 0.9em 2.5em;
+      font-weight: 700;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      width: 100%;
+    }
+    .contact-form button:hover {
+      background-color: #fff;
+      color: #00f6d1;
+    }
+    @media (max-width: 480px) {
+      .header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .contact-container {
+        padding: 2rem 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Portfolio.</div>
+    <div class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HOME SECTION -->
+  <section id="home" class="section">
+    <div class="header-flex">
+      <div class="intro-main">
+        <h1>Hello, It's Me<br>Angaj Kumar</h1>
+        <div class="animated-text" id="typewriter"></div>
+        <p>
+          Data enthusiast uncovering hidden patterns and building GenAI applications.<br />
+          Passionate about analytics, predictive modeling, and creative AI solutions.
+        </p>
+        <div class="social">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+          <a href="https://linkedin.com/in/angaj-kumar-b25202302" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/angajkumar207" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://instagram.com/yourprofile" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="profile-photo">
+        <img src="/image/image.png" alt="Angaj Kumar Photo" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <div class="about-text">
+      <p>
+        I'm passionate about discovering patterns in data and leveraging machine learning and Gen AI to drive innovation. My journey includes hands-on work with Python, model building, and visual storytelling to make data insights accessible for everyone.
+      </p>
+      <p>
+        Key competencies: Python, Pandas, Scikit-learn, Data Visualization (Matplotlib, Seaborn), and experimenting with Generative AI frameworks. Dedicated to learning new tools and sharing knowledge with the Data Science community.
+      </p>
+      <ul>
+        <li>Notebooks and code on <strong>GitHub</strong> and <strong>Kaggle</strong></li>
+        <li>Interested in NLP, generative models, and AI Ethics</li>
+        <li>Always open for collaboration on analytics projects</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- SERVICES SECTION -->
+  <section id="services" class="section">
+    <h2>Our <span style="color:#00f6d1;">Services</span></h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-icon">📊</div>
+        <h3>Data Analysis & Visualization</h3>
+        <p>Transforming raw data into clear, actionable insights using modern visualization and analysis techniques.</p>
+        <a href="#portfolio" class="service-btn">Read More</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🤖</div>
+        <h3>Machine Learning Solutions</h3>
+        <p>Building predictive models for classification, regression, and clustering to solve business challenges.</p>
+        <a href="#portfolio" class="service-btn">Read More</a>
+      </div>
+      <div class="service-card">
+        <div class="service-icon">🧠</div>
+        <h3>GenAI Application Prototypes</h3>
+        <p>Utilizing generative AI frameworks to create text or image-based solutions for automation and creative tasks.</p>
+        <a href="#portfolio" class="service-btn">Read More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <div class="contact-container">
+      <p>Feel free to reach out to discuss Data Science projects, collaborations, or just to say hello!</p>
+      <form action="mailto:your@email.com" method="POST" enctype="text/plain" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Font Awesome CDN for social icons -->
+  <script src="https://kit.fontawesome.com/1174a38981.js" crossorigin="anonymous"></script>
+
+  <!-- Typewriter Animation JS -->
+  <script>
+    const typewriter = document.getElementById('typewriter');
+    const words = ["Data Science Portfolio", "Gen AI Learner 🚀", "Python | ML | Analysing Data"];
+    let wordIndex = 0,
+      charIndex = 0,
+      isDeleting = false,
+      pauseEnd = 1200;
+
+    function typeAnimation() {
+      let current = words[wordIndex];
+      let displayed = current.substring(0, charIndex);
+      typewriter.textContent = displayed;
+      if (!isDeleting && charIndex < current.length) {
+        charIndex++;
+        setTimeout(typeAnimation, 90);
+      } else if (isDeleting && charIndex > 0) {
+        charIndex--;
+        setTimeout(typeAnimation, 50);
+      } else {
+        if (!isDeleting) {
+          isDeleting = true;
+          setTimeout(typeAnimation, pauseEnd);
+        } else {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(typeAnimation, 400);
+        }
+      }
+    }
+    document.addEventListener("DOMContentLoaded", typeAnimation);
+  </script>
+</body>
+</html>
